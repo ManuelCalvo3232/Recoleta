@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Consultora Recoleta</title>
@@ -10,10 +11,43 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <style></style>
+
+    <style>
+      section {
+        height: 100vh;
+      }
+
+      .iconos{
+        height: 100px; 
+        width: 100px; 
+        padding: 10px;
+      }
+
+      .clientes{
+        margin-left: 300px; 
+        margin-top: 230px;
+        text-align: left;
+        width: 175px; 
+        height: 105px;
+      }
+      
+      .h1-clientes{
+        font-size: 85px;
+      }
+
+      .empresas{
+        position: absolute;
+        top: 250px;
+        font-size: 85px;
+      }
+    </style>
+
   </head>
+
   <body>
-    <section id="hero" class="position-relative overflow-hidden" style="height: 100vh">
+
+
+    <section id="hero" class="position-relative overflow-hidden">
       <img
         src="recursos/recoleta.webp"
         alt="Imagen de Recoleta"
@@ -29,10 +63,9 @@
       </div>
     </section>
 
-    <section
-      class="d-flex top-0 start-0 w-100 d-flex justify-content-center"
-      style="z-index: 1030">
-      <nav class="navbar p-0 bg-white">
+    <section class="position-relative overflow-hidden">
+
+      <nav class="navbar p-0 bg-white d-flex justify-content-center">
         <ul class="navbar-nav d-flex flex-row border border-dark">
           <li class="nav-item">
             <a class="nav-link px-4 py-2 border-end border-dark" href="#"
@@ -47,12 +80,8 @@
           </li>
         </ul>
       </nav>
-    </section>
 
-    <section> 
-      
-      <div
-        class="py-5 text-dark text-center">
+      <div class="py-5 text-dark text-center">
         <h1>Que hacemos?</h1>
         <p class="py-3 w-50 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
@@ -60,20 +89,35 @@
 
       <div class="d-flex justify-content-center" style="gap: 200px;">
 
-    <div style="height: 100px; width: 100px; padding: 10px;">
+    <div style="height: 100px; width: 100px; background-color: rgba(255,0,0,0.1); padding: 10px;">
       <img src="recursos/proyecto.png" alt="Imagen de proyecto" class="w-100 h-100" style="object-fit: cover; object-position: center">
     </div>
 
-    <div style="height: 100px; width: 100px; padding: 10px;">
+    <div style="height: 100px; width: 100px; background-color: rgba(255,0,0,0.1); padding: 10px;">
       <img src="recursos/diseno.png" alt="Imagen de diseno" class="w-100 h-100" style="object-fit: cover; object-position: center">
     </div>
 
-    <div style="height: 100px; width: 100px; padding: 10px;">
+    <div style="height: 100px; width: 100px; background-color: rgba(255,0,0,0.1); padding: 10px;">
       <img src="recursos/implementacion.png" alt="Imagen de implementacion" class="w-100 h-100" style="object-fit: cover; object-position: center">
     </div>
 
   </div>
     </section>
+
+    <section class="position-relative overflow-hidden bg-info">
+      <div class="clientes">
+
+        <h1 class="h1-clientes">Nuestros clientes</h1>
+      </div>
+
+      <div class="empresas">
+        <h2> Rastro Perfumeria</h2>
+        <h2> Chironte </h2>
+      </div>    
+    </section>
+
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
