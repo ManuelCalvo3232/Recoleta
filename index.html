@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="es">
   <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Consultora Recoleta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Copse&display=swap" rel="stylesheet">  
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,117 +15,596 @@
     />
 
     <style>
+
+      html {
+    scroll-behavior: smooth;
+}
+
+
+
       section {
         height: 100vh;
       }
 
+      .hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
       .iconos{
-        height: 100px; 
-        width: 100px; 
+        height: 100px;
+        width: 100px;
         padding: 10px;
       }
 
       .clientes{
-        margin-left: 300px; 
+        margin-left: 250px;
         margin-top: 230px;
         text-align: left;
-        width: 175px; 
+        width: 175px;
         height: 105px;
       }
-      
+
       .h1-clientes{
         font-size: 85px;
+        color: white;
       }
 
       .empresas{
         position: absolute;
-        top: 250px;
-        font-size: 85px;
+        top: 46%;
+        left: 65%;
       }
-    </style>
 
+     .carrusel-elegimos {
+  margin-top: 80px; /* separación respecto al título */
+}
+
+.card-sobria {
+  width: 500px;
+  min-height: 260px;
+  margin: 0 auto;
+  background-color: #c2bfba;
+  border: 1px solid rgba(117, 107, 107, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-sobria .card-title {
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-sobria .card-text {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-section{
+    background-color: #214F2A;
+}
+
+.faq-container{
+    max-width: 900px;
+    margin: 60px auto 0;
+}
+
+.accordion-item{
+    border: none;
+    border-radius: 10px !important;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+
+.accordion-button{
+    background: #FCF8F2;
+    color: #214F2A;
+    font-weight: 600;
+    padding: 1.25rem 1.5rem;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed){
+    background: #FCF8F2;
+    color: #214F2A;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+    border: none;
+}
+
+.accordion-button::after{
+    filter: hue-rotate(70deg);
+}
+
+.accordion-body{
+    background: #ffffff;
+    color: #555;
+    line-height: 1.7;
+    padding: 1.5rem;
+}
+      
+      </style>
   </head>
 
   <body>
-
-
-    <section id="hero" class="position-relative overflow-hidden">
+    <section id="hero" class="position-relative overflow-hidden"">
       <img
         src="recursos/recoleta.webp"
         alt="Imagen de Recoleta"
         class="w-100 h-100"
         style="object-fit: cover; object-position: center"
       />
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
 
       <div
-        class="position-absolute top-50 start-50 translate-middle text-white text-center"
+        class="position-absolute top-50 start-50 translate-middle"
       >
-        <h1>Recoleta</h1>
-        <p>Consultora de Desarrollo de Software</p>
+        <img
+          src="recursos/logo-recoleta.png"
+          alt="Logo de Recoleta"
+          class="mb-4"
+          style="width: 550px; height: 300px; object-fit: cover; object-position: center; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.739));">
       </div>
     </section>
 
-    <section class="position-relative overflow-hidden">
-
-      <nav class="navbar p-0 bg-white d-flex justify-content-center">
+    <section id="nosotros" class="position-relative overflow-hidden" style="background-color: #FCF8F2;">
+      <nav class="navbar p-0 d-flex justify-content-center">
         <ul class="navbar-nav d-flex flex-row border border-dark">
           <li class="nav-item">
-            <a class="nav-link px-4 py-2 border-end border-dark" href="#"
-              >Home</a>
+            <a class="nav-link px-4 py-2 border-end border-dark" href="#hero"
+              >Home</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link px-4 py-2 border-end border-dark" href="#"
-              >Nosotros</a>
+            <a class="nav-link px-4 py-2 border-end border-dark" href="#nosotros"
+              >Nosotros</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link px-4 py-2" href="#">Servicios</a>
+            <a class="nav-link px-4 py-2 border-end border-dark" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-4 py-2 border-end border-dark" href="#FAQ">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-4 py-2" href="#Contacto">Contacto</a>
           </li>
         </ul>
       </nav>
+    
 
-      <div class="py-5 text-dark text-center">
+      <div class="text-dark text-center" style="margin-top: 100px">
         <h1>Que hacemos?</h1>
-        <p class="py-3 w-50 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="py-5 w-50 mx-auto">
+          Ayudamos a que tu negocio funcione mejor a través del software. Analizamos
+  tus procesos, identificamos oportunidades de mejora y construimos
+  herramientas digitales robustas y fáciles de usar, para que puedas
+  enfocarte en lo que realmente importa: hacer crecer tu empresa.
+        </p>
       </div>
- 
 
-      <div class="d-flex justify-content-center" style="gap: 200px;">
+      <div
+        class="iconos-container d-flex justify-content-center" style="gap: 100px; margin-top: 50px"
+      >
+        <div class="iconos">
+          <img
+            src="recursos/proyecto.png"
+            alt="Imagen de proyecto"
+            class="w-75 h-75"
+            style="object-fit: cover; object-position: center"
+          />
+        </div>
 
-    <div style="height: 100px; width: 100px; background-color: rgba(255,0,0,0.1); padding: 10px;">
-      <img src="recursos/proyecto.png" alt="Imagen de proyecto" class="w-100 h-100" style="object-fit: cover; object-position: center">
-    </div>
+        <div class="iconos">
+          <img
+            src="recursos/diseno.png"
+            alt="Imagen de diseno"
+            class="w-75 h-75"
+            style="object-fit: cover; object-position: center"
+          />
+        </div>
 
-    <div style="height: 100px; width: 100px; background-color: rgba(255,0,0,0.1); padding: 10px;">
-      <img src="recursos/diseno.png" alt="Imagen de diseno" class="w-100 h-100" style="object-fit: cover; object-position: center">
-    </div>
-
-    <div style="height: 100px; width: 100px; background-color: rgba(255,0,0,0.1); padding: 10px;">
-      <img src="recursos/implementacion.png" alt="Imagen de implementacion" class="w-100 h-100" style="object-fit: cover; object-position: center">
-    </div>
-
-  </div>
+        <div class="iconos">
+          <img
+            src="recursos/implementacion.png"
+            alt="Imagen de implementacion"
+            class="w-75 h-75"
+            style="object-fit: cover; object-position: center"
+          />
+        </div>
+      </div>
     </section>
 
-    <section class="position-relative overflow-hidden bg-info">
+    <section class="position-relative overflow-hidden" style="background-color: #214F2A">
       <div class="clientes">
-
         <h1 class="h1-clientes">Nuestros clientes</h1>
       </div>
 
       <div class="empresas">
-        <a href="#"><h2> Rastro Perfumeria</h2></a>
-        <a href="#"><h2> Chironte </h2></a>
-      </div>    
+        <a href="#"><h2>Rastro Perfumeria</h2></a>
+        <a href="https://chironte.com/es/"><h2>Chironte</h2></a>
+      </div>
+    </section>
+    
+    
+    <section id="servicios" class="position-relative overflow-hidden" style="background-color: #FCF8F2">
+      <div class="text-dark text-center" style="margin-top: 100px">
+        <h1>Por qué elegirnos?</h1>
+        <div id="carouselExampleIndicators" class="carousel slide carrusel-elegimos">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="card card-sobria">
+        <div class="card-body">
+          <h5 class="card-title">Desarrollo a medida</h5>
+          <p class="card-text">Creamos soluciones de software adaptadas a las necesidades de cada empresa, priorizando la eficiencia, la escalabilidad y la facilidad de uso.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card card-sobria">
+        <div class="card-body">
+          <h5 class="card-title">Compromiso con la calidad</h5>
+          <p class="card-text">Trabajamos con metodologías ágiles y buenas prácticas para entregar proyectos confiables, seguros y dentro de los plazos establecidos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card card-sobria">
+        <div class="card-body">
+          <h5 class="card-title">Acompañamiento continuo</h5>
+          <p class="card-text">No solo desarrollamos tu proyecto: brindamos soporte, mantenimiento y mejoras para que tu negocio siga creciendo con el tiempo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1) grayscale(100);"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1) grayscale(100);"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+</div>
     </section>
 
+ <section class="d-flex overflow-hidden" style="background-color: #214F2A; height: 100vh;">
 
+  <!-- Imagen (35%) -->
+  <div style="width: 35%; height: 100%;">
+    <img
+      src="recursos/recoleta.webp"
+      alt="Cómo trabajamos"
+      class="w-100 h-100"
+      style="object-fit: cover;"
+    >
+  </div>
 
+  <!-- Contenido (65%) -->
+  <div
+    class="d-flex flex-column justify-content-center align-items-center text-center"
+    style="width: 65%; padding: 0 80px;"
+  >
+    <h1 class="text-white mb-4">¿Cómo trabajamos?</h1>
+
+    <p class="text-white w-75 py-3">
+      1. Recibimos tu solicitud y nos ponemos en contacto contigo para entender tus necesidades y objetivos.<br><br>
+
+      2. Analizamos tu proyecto y te presentamos una propuesta detallada con el alcance, los plazos y los costos.<br><br>
+
+      3. Una vez aprobado el proyecto, comenzamos el desarrollo manteniéndote informado sobre cada avance.<br><br>
+
+      4. Entregamos la solución final y brindamos soporte y mantenimiento para garantizar su correcto funcionamiento.<br><br>
+
+      5. Seguimos acompañándote con mejoras continuas para que tu software crezca junto a tu empresa.
+    </p>
+  </div>
+
+</section>
+
+    <section class="d-flex overflow-hidden" style="background-color: #FCF8F2; height: 100vh;">
+
+  <!-- Contenido (65%) -->
+  <div
+    class="d-flex flex-column justify-content-center align-items-center text-center"
+    style="width: 65%; padding: 0 80px;"
+  >
+    <h1 class="mb-4">Trabaja con nosotros</h1>
+
+    <p class="w-75 mb-4">
+      Buscamos personas apasionadas por la tecnología y el desarrollo de
+      software que quieran enfrentar nuevos desafíos. Si te motiva aprender,
+      innovar y trabajar en equipo, nos encantaría conocerte.
+    </p>
+
+    <a href="#" class="btn btn-success px-4 py-2">
+      Enviar postulación
+    </a>
+  </div>
+
+  <!-- Imagen (35%) -->
+  <div style="width: 35%; height: 100%;">
+    <img
+      src="recursos/recoleta.webp"
+      alt="Trabaja con nosotros"
+      class="w-100 h-100"
+      style="object-fit: cover;"
+    >
+  </div>
+
+</section>
+
+    <section id="FAQ" class="faq-section d-flex flex-column justify-content-center overflow-hidden">
+
+    <div class="text-center">
+        <h1 class="text-white mb-3">Preguntas frecuentes</h1>
+
+        <p class="text-white-50 w-50 mx-auto">
+            Respondemos las consultas más habituales sobre nuestros servicios,
+            tiempos de desarrollo y acompañamiento.
+        </p>
+    </div>
+
+    <div class="accordion faq-container" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne">
+                    ¿Cuánto tiempo demora el desarrollo de un proyecto?
+                </button>
+            </h2>
+
+            <div id="collapseOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#accordionExample">
+
+                <div class="accordion-body">
+                    Cada proyecto tiene un alcance diferente. Luego de analizar
+                    tus necesidades, elaboramos un cronograma con los tiempos
+                    estimados y las fechas de entrega.
+                </div>
+
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo">
+
+                    ¿Desarrollan software completamente a medida?
+                </button>
+            </h2>
+
+            <div id="collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample">
+
+                <div class="accordion-body">
+                    Sí. Diseñamos cada solución según los procesos y objetivos de
+                    cada cliente para ofrecer un sistema adaptado a las
+                    necesidades reales de su empresa.
+                </div>
+
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree">
+
+                    ¿Ofrecen soporte una vez finalizado el proyecto?
+                </button>
+            </h2>
+
+            <div id="collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample">
+
+                <div class="accordion-body">
+                    Sí. Ofrecemos mantenimiento, actualizaciones y soporte
+                    técnico para garantizar el correcto funcionamiento del
+                    software a lo largo del tiempo.
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="Contacto" class="position-relative overflow-hidden bg-dark" style="height: 100vh;">
+
+    
+
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+
+        <h1 class="display-4 fw-semibold mb-4">
+            ¿Listo para impulsar tu empresa?
+        </h1>
+
+        <p class="lead mx-auto mb-5" style="max-width: 700px;">
+            Conversemos sobre tu proyecto. Analizaremos tus necesidades y te
+            propondremos una solución tecnológica pensada para hacer crecer tu
+            negocio.
+        </p>
+
+        <a href="#" class="btn btn-lg px-5 py-3"
+           style="
+                background:#FCF8F2;
+                color:#214F2A;
+                border-radius:40px;
+                font-weight:600;
+                transition:.3s;
+           ">
+            Agendar una consulta
+        </a>
+
+    </div>
+
+</section>
+
+    <footer class="bg-black text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-12 col-md-4">
+            <h5 class="mb-3">Recoleta</h5>
+            <p class="text-white-50">
+              Consultora de desarrollo de software especializada en
+              soluciones web a medida para empresas de todos los tamaños.
+            </p>
+          </div>
+
+          <div class="col-6 col-md-2">
+            <h6 class="mb-3">Navegación</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#hero" class="text-white-50 text-decoration-none">Home</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Nosotros</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Servicios</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h6 class="mb-3">Empresa</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Trabaja con nosotros</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+              <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <h6 class="mb-3">Contacto</h6>
+            <ul class="list-unstyled text-white-50">
+              <li class="mb-2">contacto@recoleta.com</li>
+              <li class="mb-2">+54 11 1234-5678</li>
+              <li class="mb-2">Buenos Aires, Argentina</li>
+            </ul>
+            <div class="d-flex gap-3 mt-3">
+              <a href="#" class="text-white-50" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.174-.432.57-.878 1.235-.878.87 0 1.219.662 1.219 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg>
+              </a>
+              <a href="#" class="text-white-50" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.719-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="border-secondary my-4">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white-50 small">
+          <p class="mb-2 mb-md-0">&copy; 2026 Recoleta Consultora. Todos los derechos reservados.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50 text-decoration-none">Términos y condiciones</a>
+            <a href="#" class="text-white-50 text-decoration-none">Política de privacidad</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
-    >
-    </script>
+    ></script>
+
+    <script>
+const sections = document.querySelectorAll("section");
+let currentSection = 0;
+let isScrolling = false;
+
+window.addEventListener("wheel", (e) => {
+
+    if (isScrolling) return;
+
+    // Si el usuario ya llegó al footer, no intervenir
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+        return;
+    }
+
+    if (e.deltaY > 0) {
+        // Scroll hacia abajo
+        if (currentSection < sections.length - 1) {
+            currentSection++;
+            scrollToSection();
+        }
+    } else {
+        // Scroll hacia arriba
+        if (currentSection > 0) {
+            currentSection--;
+            scrollToSection();
+        }
+    }
+
+}, { passive: true });
+
+function scrollToSection() {
+    isScrolling = true;
+
+    sections[currentSection].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    setTimeout(() => {
+        isScrolling = false;
+    }, 800);
+}
+
+// Si el usuario navega con la navbar o mueve la barra de scroll,
+// actualizamos la sección actual.
+window.addEventListener("scroll", () => {
+
+    const middle = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section, index) => {
+        if (
+            middle >= section.offsetTop &&
+            middle < section.offsetTop + section.offsetHeight
+        ) {
+            currentSection = index;
+        }
+    });
+
+});
+</script>
   </body>
 </html>
+
