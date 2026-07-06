@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contacto | Recoleta Consultora</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Copse&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #fcf8f2;
+        font-family: system-ui, sans-serif;
+      }
+
+      .contact-section {
+        min-height: 100vh;
+        display: flex;
+      }
+
+      .contact-content {
+        width: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px;
+        background: #fcf8f2;
+      }
+
+      .contact-card {
+        width: 100%;
+        max-width: 620px;
+      }
+
+      .contact-card h1 {
+        font-family: "Copse", serif;
+        color: #214f2a;
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-card p {
+        color: #6c757d;
+        margin-bottom: 2rem;
+      }
+
+      .form-control {
+        border-radius: 4px;
+        padding: 0.9rem 1rem;
+        border: 1px solid #d7d7d7;
+        box-shadow: none !important;
+      }
+
+      .form-control:focus {
+        border-color: #214f2a;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .btn-enviar {
+        background: #214f2a;
+        color: white;
+        border: none;
+        padding: 0.9rem;
+        transition: 0.3s;
+      }
+
+      .btn-enviar:hover {
+        background: #17381d;
+        color: white;
+      }
+
+      .contact-image {
+        width: 35%;
+      }
+
+      .contact-image img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      @media (max-width: 992px) {
+        .contact-section {
+          flex-direction: column-reverse;
+        }
+
+        .contact-content,
+        .contact-image {
+          width: 100%;
+        }
+
+        .contact-image img {
+          height: 300px;
+        }
+
+        .contact-content {
+          padding: 50px 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="contact-section">
+      <!-- Formulario -->
+
+      <div class="contact-content">
+        <div class="contact-card">
+          <h1>Contactanos</h1>
+
+          <p>
+            Contanos sobre tu proyecto. Te responderemos a la brevedad para
+            coordinar una reunión y analizar cómo podemos ayudarte.
+          </p>
+
+          <!-- Listo para conectar a una API -->
+          <form id="contactForm">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre completo"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Correo electrónico"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="empresa"
+                name="empresa"
+                placeholder="Empresa (opcional)"
+              />
+            </div>
+
+            <div class="mb-4">
+              <textarea
+                class="form-control"
+                id="mensaje"
+                name="mensaje"
+                rows="6"
+                placeholder="¿En qué podemos ayudarte?"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-enviar w-100">
+              Enviar consulta
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+
+      <div class="contact-image">
+        <img src="../recursos/recoleta.webp" alt="Contacto" />
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Preparado para conectar a una API -->
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const data = {
+            nombre: document.getElementById("nombre").value,
+            email: document.getElementById("email").value,
+            empresa: document.getElementById("empresa").value,
+            mensaje: document.getElementById("mensaje").value,
+          };
+
+          // Ejemplo para cuando tengas la API:
+          /*
+    const response = await fetch("https://tu-api.com/contacto",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+    });
+
+    if(response.ok){
+        alert("Mensaje enviado.");
+        e.target.reset();
+    }
+    */
+
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>
