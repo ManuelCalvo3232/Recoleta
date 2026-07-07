@@ -22,7 +22,7 @@
     <style>
       html,
       body {
-        height: 100%;
+        height: 100vh;
         margin: 0;
         background: #fcf8f2;
         font-family: system-ui, sans-serif;
@@ -86,14 +86,23 @@
         color: white;
       }
 
+      /* Columna de la imagen: ahora solo sirve para centrar el cuadro */
       .contact-image {
         width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 40px 40px 0;
+        box-sizing: border-box;
       }
 
       .contact-image img {
         width: 100%;
-        height: 100vh;
+        max-width: 420px;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
       }
 
       @media (max-width: 992px) {
@@ -106,8 +115,12 @@
           width: 100%;
         }
 
+        .contact-image {
+          padding: 30px;
+        }
+
         .contact-image img {
-          height: 300px;
+          max-width: 320px;
         }
 
         .contact-content {
@@ -185,7 +198,7 @@
       <!-- Imagen -->
 
       <div class="contact-image">
-        <img src="../recursos/recoleta.webp" alt="Contacto" />
+        <img src="lugar-contacto.png" alt="Contacto" />
       </div>
     </section>
 
